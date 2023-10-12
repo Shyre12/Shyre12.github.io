@@ -1,0 +1,16 @@
+.w3-top {
+  background-color: black;
+  color: white;
+}
+
+.w3-bar-item,
+.w3-dropdown-content a {
+  color: white;}
+body {
+  background-color: black;
+  color: white;
+  font-family: Verdana;
+}
+body {
+  overflow-y: scroll;
+}

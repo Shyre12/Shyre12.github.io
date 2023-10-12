@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title id="tab-title"></title>
+  <link rel="icon" id="icon" type="image/png" href="https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.svg?v=ec617d715196">
+  <style> 
+    input[type=text] {
+      width: 20%;
+      height: 36px;
+      padding: 12px 20px;
+      margin: 2px 0;
+      box-sizing: border-box;
+      border-radius: 4px;
+      padding-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <label for="title-input"></label>
+  <input type="text" id="title-input">
+  <br><br>
+  <label for="icon-input"></label>
+  <input type="text" id="icon-input">
+  
+  <script>
+    const titleInput = document.querySelector('#title-input');
+    const tabTitle = document.querySelector('#tab-title');
+    const storedTitle = localStorage.getItem('titleInputValue');
+    const iconInput = document.querySelector('#icon-input');
+    const icon = document.querySelector('#icon');
+    const storedIcon = localStorage.getItem('iconLink');
+
+    if (storedTitle) {
+      titleInput.value = storedTitle;
+      tabTitle.textContent = storedTitle;
+    } else {
+      tabTitle.textContent = 'Change Tab Title';
+    }
+
+    if (storedIcon) {
+      icon.href = storedIcon;
+    }
+
+    titleInput.addEventListener('input', () => {
+      const inputVal = titleInput.value;
+      localStorage.setItem('titleInputValue', inputVal);
+      tabTitle.textContent = inputVal;
+    });
+
+    iconInput.addEventListener('input', () => {
+      const link = iconInput.value;
+      localStorage.setItem('iconLink', link);
+      icon.href = link;
+    });
+  </script>
+</body>
+</html>

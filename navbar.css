@@ -1,0 +1,23 @@
+ body {
+    font-family: "Lato", sans-serif;
+    background-color: #2d3440;
+    color: white;
+    padding-top: 55px; /* adjust this value to match the height of your Navbar */ 
+}
+
+.my-top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: black;
+}
+
+.my-top-bar a {
+    color: white;
+}
+
+.mySlides {
+    display: none
+}

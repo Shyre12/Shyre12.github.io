@@ -1,0 +1,8 @@
+php
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $suggestion = $_POST['suggestion'];
+  file_put_contents('suggestions.txt', "$suggestion\n", FILE_APPEND);
+}
+?><form id="my-form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+<input id="search-bar" type="text" name="suggestion" placeholder="" />
